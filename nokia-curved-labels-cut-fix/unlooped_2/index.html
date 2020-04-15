@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vector Stand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body, #canvas {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .toolbar {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            padding: 5px;
+            background: white;
+        }
+        #indoor_toolbar {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            user-select: none;
+        }
+        .plan_control {
+            background: white;
+            margin-bottom: 10px;
+        }
+        .plan_name {
+            color: #777;
+        }
+        .levels {
+            display: flex;
+        }
+        .level {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="toolbar">
+        <code id="camera_state">n/a</code>
+        <button id="moscow">moscow</button>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+        <label for="night-mode">
+            <input type="checkbox" name="night-mode" id="night-mode">
+            <span>Night mode</span>
+        </label>
+    </div>
+
+    <div id="indoor_toolbar"></div>
+    <template id="plan_control_template">
+        <div class="plan_control">
+            <label class="plan_heading">
+                <input type="checkbox">
+                <span>show plan</span>
+                <span class="plan_name"></span>
+            </label>
+            <div class="levels"></div>
+        </div>
+    </template>
+    <template id="level_template">
+        <label class="level">
+            <input type="radio">
+            <span class="level_name"></span>
+        </label>
+    </template>
+
+    <script src="./index.js"></script>
+</body>
+</html>
